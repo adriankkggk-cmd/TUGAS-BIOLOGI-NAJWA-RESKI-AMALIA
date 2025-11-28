@@ -1,324 +1,443 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Materi Fotosintesis</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Biologi Cute Ultra — Fotosintesis 🌸</title>
 
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ==================== GENERAL STYLE ==================== */
-body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: #fff6fb;
-    color: #444;
-    transition: background 0.4s, color 0.4s;
+/* ========== RESET & BASE ========== */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Quicksand",sans-serif;background:#fff8ff;color:#333;overflow-x:hidden}
+a{color:inherit}
+
+/* ========== PASTEL BACKGROUND ========== */
+:root{
+  --pink:#ff9ed4;
+  --rose:#ff7bb8;
+  --accent:#7ac48a;
+  --card:#fff;
+}
+body{
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,194,235,0.12) 0 12%, transparent 12%),
+    radial-gradient(circle at 80% 80%, rgba(186,241,222,0.08) 0 10%, transparent 10%),
+    linear-gradient(180deg,#fff6ff 0%, #fef0fb 50%, #fffaf2 100%);
+  background-attachment: fixed;
 }
 
-.card {
-    background: white;
-    padding: 22px;
-    margin: 20px auto;
-    max-width: 900px;
-    border-radius: 18px;
-    box-shadow: 0 4px 12px rgba(255, 150, 180, 0.25);
-    border: 3px solid #ffe0ef;
+/* small decorative overlay */
+.background-deco {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.18;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,140,180,0.10) 0 4%, transparent 4%),
+    radial-gradient(circle at 70% 10%, rgba(122,196,138,0.06) 0 3%, transparent 3%),
+    radial-gradient(circle at 40% 80%, rgba(170,140,255,0.06) 0 5%, transparent 5%);
+  background-size: 180px, 130px, 160px;
+  mix-blend-mode: screen;
 }
 
-/* ==================== NAVBAR ==================== */
-nav {
-    background: #ff9ecb;
-    padding: 14px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    border-bottom: 3px solid #ff7fb0;
+/* ========== NAVBAR ========== */
+nav{
+  position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:center; gap:22px;
+  padding:12px 18px; background:linear-gradient(90deg,var(--pink),#ffd3ed); border-bottom:3px solid rgba(255,120,170,0.18)
 }
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 600;
-}
+nav a{color:#fff; font-weight:700; text-decoration:none}
+nav .controls{position:absolute; right:16px; top:10px; display:flex; gap:8px; align-items:center}
 
-/* ==================== HERO ==================== */
-.hero {
-    text-align: center;
-    padding: 65px 20px;
-    background: linear-gradient(135deg, #ffafd5, #ffd9e8, #eacbff);
-    color: white;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+/* bubble buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:none;
+  background:#fff; color:#ff5f9e; font-weight:700; cursor:pointer; box-shadow:0 6px 18px rgba(255,120,180,0.12)
 }
-.hero h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
+.btn:active{transform:translateY(2px)}
 
-/* ==================== PROFILE ==================== */
-.profile-img {
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 15px;
-    border: 3px solid #ffd4ea;
-    box-shadow: 0 4px 10px rgba(255, 150, 190, 0.4);
+/* ========== DARK MODE ========== */
+body.dark{
+  background: linear-gradient(180deg,#2b1931 0%, #3b2741 50%); color:#ffeaff;
 }
+body.dark nav{background:linear-gradient(90deg,#6d4c7d,#8f69a8)}
+body.dark .btn{background:#3a2540;color:#ffd6ff;box-shadow:0 6px 18px rgba(0,0,0,0.3)}
 
-/* ==================== VIDEO ==================== */
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-}
-.video-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-}
-
-/* ==================== QUIZ ==================== */
-.quiz-box {
-    background: #ffedf7;
-    padding: 15px;
-    border-left: 6px solid #ff7bb8;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-.result-icon {
-    font-weight: bold;
-    display: inline-block;
-    margin-left: 8px;
-}
-
-/* ==================== DARK MODE ==================== */
-.dark {
-    background: #2b2b2b;
-    color: #eee;
-}
-.dark .card {
-    background: #3a3a3a;
-    border-color: #444;
-    box-shadow: none;
-}
-.dark nav {
-    background: #444;
-    border-bottom: 3px solid #666;
-}
-
-/* Toggle Button */
-.toggle-dark {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #ff7bb8;
-    padding: 12px 18px;
-    border-radius: 30px;
-    cursor: pointer;
-    color: white;
-    box-shadow: 0 4px 10px rgba(255, 120, 170, 0.3);
-}
-
-/* ==================== LOADER ==================== */
+/* ========== LOADER (BUNNY) ========== */
 #loader {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: #ffe4f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    flex-direction: column;
+  position:fixed; inset:0; background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,242,250,0.95));
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:18px; z-index:100;
+  transition:opacity .5s ease, transform .5s ease;
 }
+#loader.hidden{opacity:0; transform:translateY(-10px); pointer-events:none}
 .bunny {
-    width: 110px;
-    animation: hop 1s infinite;
+  width:150px; height:150px; background:linear-gradient(180deg,#fff,#ffe6f7); border-radius:40%;
+  display:flex; align-items:center; justify-content:center; position:relative; box-shadow:0 10px 30px rgba(255,130,180,0.18);
+  animation: bunny-bounce 1.1s infinite; border:4px solid #ffdfea;
 }
-@keyframes hop {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
+@keyframes bunny-bounce{0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+.bunny::before,.bunny::after{
+  content:""; position:absolute; width:42px; height:70px; background:linear-gradient(180deg,#ffeef8,#ffd6ec);
+  border-radius:26px; top:-54px; box-shadow:0 6px 12px rgba(255,120,180,0.12);
 }
-</style>
+.bunny::before{left:22px; transform:rotate(-12deg)}
+.bunny::after{right:22px; transform:rotate(12deg)}
+.bunny .face{width:86px; height:86px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; position:relative;}
+.eye{width:8px; height:8px; background:#333; border-radius:50%; position:absolute; left:26px; top:34px}
+.eye.right{left:auto; right:26px}
+.mouth{width:28px; height:12px; border-radius:12px; background:transparent; border-bottom:3px solid #ff9fbf; position:absolute; bottom:22px}
+.bunny .cheek{position:absolute; width:14px; height:10px; border-radius:8px; background:#ffd0e7; left:12px; bottom:20px}
+.bunny .cheek.right{left:auto; right:12px}
+#loader p{font-weight:700; color:#ff5f9e; font-size:18px; margin:0}
+#loader button{background:#ff7bb8; color:white; border-radius:999px; padding:8px 14px; border:none; cursor:pointer}
 
+/* ========== MAIN LAYOUT ========== */
+.container{max-width:980px; margin:24px auto; padding:0 18px; z-index:10; position:relative}
+.card{background:rgba(255,255,255,0.95); border-radius:18px; padding:20px; margin:18px 0; border:2px solid rgba(255,220,235,0.6); box-shadow:0 8px 30px rgba(255,120,180,0.06)}
+body.dark .card{background:rgba(70,45,70,0.28); border:2px solid rgba(180,140,220,0.12); color:#ffe9ff}
+
+/* profile */
+.profile{display:flex; gap:16px; align-items:center}
+.profile .meta p{margin:6px 0}
+
+/* headings */
+h1,h2{margin:8px 0}
+h1{font-size:34px; color:#ff5f9e}
+h2{color:#ff76b9}
+
+/* video */
+.video-wrap{position:relative; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; margin-top:12px}
+.video-wrap iframe{position:absolute; left:0; top:0; width:100%; height:100%; border:0;}
+
+/* table */
+table{width:100%; border-collapse:collapse; margin-top:10px; border-radius:10px; overflow:hidden}
+th{background:#ffd7ed; color:#9b3a6a; padding:10px; text-align:left}
+td{background:#fff6fb; padding:10px; border-bottom:2px solid #ffeaf6}
+
+/* funfact */
+.fun{background:linear-gradient(90deg,#fff3fb,#fffaf6); padding:12px; border-radius:12px; border:1px solid #ffe6f3; margin-top:12px}
+
+/* quiz */
+.quiz{display:flex; flex-direction:column; gap:10px; margin-top:10px}
+.qbox{background:#fff1fb; padding:12px; border-radius:12px; border:1px dashed #ffdfeff3}
+label{cursor:pointer; display:flex; align-items:center; gap:8px}
+.choice-icon{width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; border-radius:6px; font-weight:700}
+.choice-icon.hidden{opacity:0}
+
+/* correct/wrong icons */
+.correct { color: #1b6e3a; font-weight:900 }
+.wrong { color: #b91d1d; font-weight:900 }
+
+/* glitter overlay */
+.glitter { position:fixed; inset:0; pointer-events:none; mix-blend-mode:screen; opacity:0.30; z-index:5;
+  background-image:
+   radial-gradient(circle at 10% 10%, rgba(255,255,255,0.6) 0 2px, transparent 2px),
+   radial-gradient(circle at 80% 30%, rgba(255,255,255,0.55) 0 2px, transparent 2px),
+   radial-gradient(circle at 40% 70%, rgba(255,255,255,0.45) 0 2px, transparent 2px);
+  background-size: 60px 60px, 50px 50px, 70px 70px;
+}
+
+/* footer */
+footer{margin:30px 0; padding:20px; text-align:center; color:#b84a7a}
+
+/* responsive */
+@media (max-width:640px){ h1{font-size:28px} .profile{flex-direction:column;align-items:flex-start} }
+</style>
 </head>
 <body>
 
-<!-- ==================== LOADER ==================== -->
-<div id="loader">
-    <img src="https://i.imgur.com/8qL0ZcC.png" class="bunny">
-    <p style="font-size:18px; color:#ff5f9e; margin-top:10px;">Loading...</p>
+<!-- decorative layers -->
+<div class="background-deco" aria-hidden="true"></div>
+<div class="glitter" aria-hidden="true"></div>
+
+<!-- LOADER -->
+<div id="loader" role="status" aria-live="polite">
+  <div class="bunny" aria-hidden="true">
+    <div class="face">
+      <div class="eye"></div>
+      <div class="eye right"></div>
+      <div class="mouth"></div>
+      <div class="cheek"></div>
+      <div class="cheek right"></div>
+    </div>
+  </div>
+  <p>Loading ~ please wait 🌸</p>
+  <div style="display:flex;gap:10px;margin-top:6px;">
+    <button onclick="hideLoader()">Skip</button>
+    <button onclick="toggleDarkMode()">🌙 Dark</button>
+  </div>
 </div>
 
-<!-- ==================== NAVBAR ==================== -->
+<!-- NAVBAR -->
 <nav>
-    <a href="#judul-materi">Materi</a>
-    <a href="#profil">Profil</a>
-    <a href="#video">Video</a>
-    <a href="#kuis">Kuis</a>
+  <a href="#profil">Profil</a>
+  <a href="#tujuan">Tujuan</a>
+  <a href="#materi">Materi</a>
+  <a href="#video">Video</a>
+  <a href="#kuis">Kuis</a>
+  <div class="controls" aria-hidden="true"></div>
 </nav>
 
-<!-- ==================== HERO ==================== -->
-<section class="hero">
-    <h1>Fotosintesis</h1>
-    <p>Materi Pembelajaran Biologi</p>
-</section>
+<!-- MAIN -->
+<main class="container" id="mainContent" aria-hidden="true">
 
-<!-- ==================== JUDUL MATERI ==================== -->
-<section class="card" id="judul-materi">
-    <h1 style="text-align:center; margin-bottom:8px;">Materi Pembelajaran</h1>
-    <h2 style="text-align:center; color:#ff5f9e;">Fotosintesis pada Tumbuhan Hijau</h2>
-    <p style="text-align:center; margin-top:10px;">
-        Materi ini membahas proses fotosintesis, reaksi terang, reaksi gelap, rumus kimia, 
-        dan faktor-faktor yang mempengaruhi jalannya fotosintesis.
-    </p>
-</section>
+<!-- PROFILE -->
+  <section class="card" id="profil">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+      <div class="profile" style="align-items:center">
+        <div style="width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#fff,#ffe6f7);border:4px solid #ffd3ec;color:#ff5f9e;font-weight:800">
+          <!-- No photo as requested -->
+          NA
+        </div>
+        <div class="meta" style="margin-left:12px">
+          <h2>Dibuat oleh Najwa Reski Amalia</h2>
+          <p><strong>NIM:</strong> H0323309</p>
+          <p><strong>Program Studi:</strong> Pendidikan Biologi B</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ==================== PROFIL ==================== -->
-<section class="card" id="profil">
-    <h2>Profil Pembuat</h2>
-
-    <img src="IMG-20251128-WA0048.png" alt="Foto Pembuat" class="profile-img">
-
-    <p style="text-align:center;">
-        Dibuat oleh<br>
-        <b>Najwa Reski Amalia</b> (H0323309)<br>
-        Pendidikan Biologi B
-    </p>
-</section>
-
-<!-- ==================== MATERI ==================== -->
-<section class="card" id="materi">
-    <h2>Materi Fotosintesis</h2>
-
-    <p><b>Fotosintesis</b> adalah proses tumbuhan hijau dalam membuat makanan sendiri dengan bantuan cahaya matahari. Proses ini terjadi di kloroplas menggunakan pigmen klorofil.</p>
-
-    <h3>Rumus Fotosintesis</h3>
-    <p style="text-align:center; font-size:20px; font-weight:600;">
-        6CO₂ + 6H₂O + cahaya → C₆H₁₂O₆ + 6O₂
-    </p>
-
-    <h3>Reaksi Terang</h3>
+  <!-- TUJUAN -->
+  <section class="card" id="tujuan">
+    <h2>🎯 Tujuan Pembelajaran</h2>
     <ul>
-        <li>Terjadi di grana</li>
-        <li>Butuh cahaya</li>
-        <li>Menghasilkan O₂</li>
+      <li>Memahami definisi fotosintesis secara sederhana dan ilmiah.</li>
+      <li>Menjelaskan reaksi terang dan reaksi gelap/siklus Calvin.</li>
+      <li>Menganalisis faktor-faktor yang mempengaruhi proses fotosintesis.</li>
+      <li>Mengetahui peran fotosintesis bagi kehidupan (oksigen & rantai makanan).</li>
+      <li>Mampu menuliskan dan menjelaskan persamaan fotosintesis.</li>
+    </ul>
+  </section>
+
+  <!-- MATERI -->
+  <section class="card" id="materi">
+    <h2>🌸 Materi Lengkap: Fotosintesis</h2>
+
+    <p><strong>Pengertian:</strong> Fotosintesis adalah proses biokimia pada tumbuhan hijau, alga, dan beberapa bakteri untuk mengubah energi cahaya menjadi energi kimia (glukosa) dengan bantuan pigmen klorofil di dalam kloroplas.</p>
+
+    <h3 style="color:#b84a7a">🔬 Rangkaian Proses (detail singkat)</h3>
+    <p><em>Reaksi terang</em> (light reactions): terjadi di tilakoid/grana; cahaya diserap oleh klorofil, energi cahaya digunakan untuk memecah H₂O menjadi O₂, elektron dan proton; dihasilkan ATP dan NADPH.</p>
+
+    <p><em>Reaksi gelap (Siklus Calvin)</em>: terjadi di stroma; CO₂ direduksi menggunakan ATP dan NADPH menjadi gula (G3P) yang kemudian direkayasa menjadi glukosa.</p>
+
+    <h3 style="color:#b84a7a">⚖️ Rumus Fotosintesis</h3>
+    <p style="text-align:center;font-weight:700;font-size:18px">6CO₂ + 6H₂O + cahaya → C₆H₁₂O₆ + 6O₂</p>
+
+    <h3 style="color:#b84a7a">🌱 Faktor yang Mempengaruhi</h3>
+    <ul>
+      <li><strong>Cahaya:</strong> intensitas & panjang gelombang (merah & biru paling efektif).</li>
+      <li><strong>CO₂:</strong> ketersediaan CO₂ memengaruhi laju fotosintesis sampai batas jenuh.</li>
+      <li><strong>Air:</strong> sumber elektron; kekurangan memperlambat proses.</li>
+      <li><strong>Suhu:</strong> enzim bekerja optimal pada rentang suhu tertentu.</li>
+      <li><strong>Klorofil & nutrisi:</strong> kekurangan nutrisi menurunkan efektivitas.</li>
     </ul>
 
-    <h3>Reaksi Gelap (Siklus Calvin)</h3>
+    <h3 style="color:#b84a7a">🔎 Peran ekologis & aplikasi</h3>
     <ul>
-        <li>Terjadi di stroma</li>
-        <li>Tidak membutuhkan cahaya</li>
-        <li>Menghasilkan glukosa</li>
+      <li>Produksi oksigen untuk respirasi makhluk hidup.</li>
+      <li>Dasar rantai makanan — tumbuhan sebagai produsen primer.</li>
+      <li>Aplikasi: agronomi (optimasi cahaya & nutrisi), bioteknologi, mitigasi CO₂.</li>
     </ul>
 
-    <h3>Faktor yang Mempengaruhi</h3>
-    <ul>
-        <li>Cahaya</li>
-        <li>Klorofil</li>
-        <li>Air</li>
-        <li>Suhu</li>
-        <li>Konsentrasi CO₂</li>
-    </ul>
-</section>
+    <div class="fun">🌼 <strong>Fun Fact:</strong> Fitoplankton di lautan menyumbang sebagian besar oksigen global — bukan hanya pepohonan!</div>
+  </section>
 
-<!-- ==================== VIDEO ==================== -->
-<section class="card" id="video">
-    <h2>Video Pembelajaran</h2>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/nlXwuNHF8JM" allowfullscreen></iframe>
+  <!-- VIDEO -->
+  <section class="card" id="video">
+    <h2>🎬 Video Pembelajaran</h2>
+    <p>Video ini menjelaskan proses fotosintesis dengan visual dan contoh yang mudah diikuti.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/nlXwuNHF8JM" title="Video Fotosintesis" allowfullscreen></iframe>
     </div>
-</section>
+  </section>
 
-<!-- ==================== QUIZ ==================== -->
-<section class="card" id="kuis">
-    <h2>Kuis Fotosintesis</h2>
+   <!-- QUIZ -->
+  <section class="card" id="kuis">
+    <h2>🧁 Kuis Interaktif (jawaban akan diberi tanda ✔ / ✘)</h2>
+    <form id="quizForm" onsubmit="return false;">
+      <div class="quiz">
+        <!-- Q1 -->
+        <div class="qbox" id="box-q1">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><strong>1.</strong> Bahan utama fotosintesis adalah...</div>
+            <div id="mark-q1" class="choice-icon hidden" aria-hidden="true"></div>
+          </div>
+          <div style="margin-top:8px">
+            <label><input type="radio" name="q1" value="a"> Oksigen</label>
+          </div>
+          <div><label><input type="radio" name="q1" value="b"> Karbon dioksida & Air</label></div>
+          <div><label><input type="radio" name="q1" value="c"> Protein</label></div>
+        </div>
 
-    <div class="quiz-box">
-        <p>1. Bahan utama fotosintesis adalah...</p>
-        <label><input type="radio" name="q1" value="a"> Oksigen</label><br>
-        <label><input type="radio" name="q1" value="b"> Karbon dioksida dan air</label><br>
-        <label><input type="radio" name="q1" value="c"> Nitrogen</label>
-        <span id="icon-q1" class="result-icon"></span>
-    </div>
+        <!-- Q2 -->
+        <div class="qbox" id="box-q2">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><strong>2.</strong> Reaksi terang terjadi di...</div>
+            <div id="mark-q2" class="choice-icon hidden" aria-hidden="true"></div>
+          </div>
+          <div style="margin-top:8px"><label><input type="radio" name="q2" value="a"> Grana / Tilakoid</label></div>
+          <div><label><input type="radio" name="q2" value="b"> Nukleus</label></div>
+          <div><label><input type="radio" name="q2" value="c"> Sitoplasma</label></div>
+        </div>
 
-    <div class="quiz-box">
-        <p>2. Reaksi terang terjadi di...</p>
-        <label><input type="radio" name="q2" value="a"> Grana</label><br>
-        <label><input type="radio" name="q2" value="b"> Stroma</label><br>
-        <label><input type="radio" name="q2" value="c"> Nukleus</label>
-        <span id="icon-q2" class="result-icon"></span>
-    </div>
+        <!-- Q3 -->
+        <div class="qbox" id="box-q3">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><strong>3.</strong> Hasil fotosintesis utama adalah...</div>
+            <div id="mark-q3" class="choice-icon hidden" aria-hidden="true"></div>
+          </div>
+          <div style="margin-top:8px"><label><input type="radio" name="q3" value="a"> Lemak</label></div>
+          <div><label><input type="radio" name="q3" value="b"> Protein</label></div>
+          <div><label><input type="radio" name="q3" value="c"> Glukosa & Oksigen</label></div>
+        </div>
 
-    <div class="quiz-box">
-        <p>3. Hasil fotosintesis adalah...</p>
-        <label><input type="radio" name="q3" value="a"> Lemak</label><br>
-        <label><input type="radio" name="q3" value="b"> DNA</label><br>
-        <label><input type="radio" name="q3" value="c"> Glukosa dan oksigen</label>
-        <span id="icon-q3" class="result-icon"></span>
-    </div>
+        <!-- Q4 -->
+        <div class="qbox" id="box-q4">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><strong>4.</strong> Tempat fotosintesis berlangsung pada tumbuhan adalah...</div>
+            <div id="mark-q4" class="choice-icon hidden" aria-hidden="true"></div>
+          </div>
+          <div style="margin-top:8px"><label><input type="radio" name="q4" value="a"> Mitokondria</label></div>
+          <div><label><input type="radio" name="q4" value="b"> Kloroplas</label></div>
+          <div><label><input type="radio" name="q4" value="c"> Ribosom</label></div>
+        </div>
 
-    <button onclick="cekKuis()">Cek Jawaban</button>
-    <p id="skor" style="font-weight:600; margin-top:10px;"></p>
-</section>
+        <!-- Q5 -->
+        <div class="qbox" id="box-q5">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><strong>5.</strong> Pigmen utama yang menangkap cahaya adalah...</div>
+            <div id="mark-q5" class="choice-icon hidden" aria-hidden="true"></div>
+          </div>
+          <div style="margin-top:8px"><label><input type="radio" name="q5" value="a"> Klorofil</label></div>
+          <div><label><input type="radio" name="q5" value="b"> Hemoglobin</label></div>
+          <div><label><input type="radio" name="q5" value="c"> Melanin</label></div>
+        </div>
 
-<!-- ==================== TOGGLE ==================== -->
-<div class="toggle-dark" onclick="toggleDark()">🌙 Mode Gelap</div>
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+        <button onclick="evaluateQuiz()">Cek Jawaban</button>
+        <button type="button" onclick="resetQuiz()" style="background:#fff;border:2px solid #ffb6de;color:#ff5f9e">Reset</button>
+      </div>
+    </form>
+
+    <p id="quizResult" style="margin-top:12px;font-weight:700"></p>
+    <p style="margin-top:8px;color:#666;font-size:13px">Catatan: Klik ulang 'Cek Jawaban' setelah mengubah pilihan untuk melihat tanda ✔/✘ terbaru.</p>
+  </section>
+
+</main>
+
+<footer>🌸 Cute Ultra Edition – Pembelajaran Fotosintesis • Dibuat oleh Najwa Reski Amalia (H0323309) — Pendidikan Biologi B</footer>
 
 <script>
-/* LOADER */
-window.onload = () => {
-    setTimeout(() => {
-        document.getElementById("loader").style.display = "none";
-    }, 1200);
-};
+/* ---------- Loader handling ---------- */
+const loader = document.getElementById('loader');
+const mainContent = document.getElementById('mainContent');
 
-/* DARK MODE */
-function toggleDark() {
-    document.body.classList.toggle("dark");
+function hideLoader(){
+  loader.classList.add('hidden');
+  setTimeout(()=> {
+    loader.style.display='none';
+    mainContent.removeAttribute('aria-hidden');
+  },500);
+}
+window.addEventListener('load', ()=> { setTimeout(hideLoader, 700); });
+
+/* ---------- Dark mode persist ---------- */
+function toggleDarkMode(){
+  document.body.classList.toggle('dark');
+  if(document.body.classList.contains('dark')) localStorage.setItem('cute-dark','1');
+  else localStorage.removeItem('cute-dark');
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  if(localStorage.getItem('cute-dark')) document.body.classList.add('dark');
+});
+
+/* ---------- QUIZ logic with icons ---------- */
+const answers = { q1:'b', q2:'a', q3:'c', q4:'b', q5:'a' };
+
+function clearMarks(){
+  for(let i=1;i<=5;i++){
+    const mark = document.getElementById('mark-q'+i);
+    if(mark){
+      mark.className = 'choice-icon hidden';
+      mark.innerHTML = '';
+    }
+  }
 }
 
-/* QUIZ CHECK */
-function cekKuis() {
-    let skor = 0;
-
-    const kunci = {
-        q1: "b",
-        q2: "a",
-        q3: "c"
-    };
-
-    Object.keys(kunci).forEach(q => {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        const icon = document.getElementById(`icon-${q}`);
-
-        if (!selected) {
-            icon.textContent = "";
-            return;
+function evaluateQuiz(){
+  clearMarks();
+  let score = 0, total = Object.keys(answers).length;
+  for(let id in answers){
+    const selected = document.querySelector(`input[name="${id}"]:checked`);
+    const markEl = document.getElementById('mark-'+id);
+    // mark element id uses hyphen? we used mark-q1... so:
+    const mark = document.getElementById('mark-'+id) || document.getElementById('mark-'+id);
+    // actually IDs are mark-q1 etc. Use that.
+  }
+  // better loop numeric
+  for(let i=1;i<=5;i++){
+    const qid = 'q'+i;
+    const sel = document.querySelector(`input[name="${qid}"]:checked`);
+    const markEl = document.getElementById('mark-'+qid);
+    if(sel && sel.value === answers[qid]){
+      score++;
+      // show green check
+      markEl.className = 'choice-icon correct';
+      markEl.innerHTML = '✔';
+      markEl.style.opacity = 1;
+    } else {
+      // show red X
+      markEl.className = 'choice-icon wrong';
+      markEl.innerHTML = '✘';
+      markEl.style.opacity = 1;
+      // also highlight correct answer visually by adding small note next to label
+      const correctVal = answers[qid];
+      // find label text for correct option and append small green check (non-destructive)
+      const option = document.querySelector(`input[name="${qid}"][value="${correctVal}"]`);
+      if(option){
+        // ensure we add a small green marker after its label (only once)
+        const lb = option.parentElement;
+        if(lb && !lb.querySelector('.auto-correct')){
+          const span = document.createElement('span');
+          span.className = 'auto-correct';
+          span.style.marginLeft = '8px';
+          span.style.color = '#1b6e3a';
+          span.style.fontWeight = '800';
+          span.textContent = ' ✔';
+          lb.appendChild(span);
         }
-
-        if (selected.value === kunci[q]) {
-            skor++;
-            icon.style.color = "green";
-            icon.textContent = "✔";
-        } else {
-            icon.style.color = "red";
-            icon.textContent = "✘";
-        }
-    });
-
-    document.getElementById("skor").innerHTML = "Skor kamu: " + skor + " / 3";
+      }
+    }
+  }
+  const pct = Math.round((score/total)*100);
+  document.getElementById('quizResult').innerText = `🌈 Kamu mendapatkan ${score} dari ${total} — ${pct}%`;
+  // save to localStorage
+  const rec = {score, total, pct, time: new Date().toISOString()};
+  localStorage.setItem('cute-quiz-result', JSON.stringify(rec));
 }
+
+/* reset quiz (also clear auto-correct markers) */
+function resetQuiz(){
+  document.getElementById('quizForm').reset();
+  document.getElementById('quizResult').innerText = '';
+  clearMarks();
+  // remove any .auto-correct spans
+  document.querySelectorAll('.auto-correct').forEach(el=>el.remove());
+  localStorage.removeItem('cute-quiz-result');
+}
+
+/* show last saved result on load */
+document.addEventListener('DOMContentLoaded', ()=>{
+  const raw = localStorage.getItem('cute-quiz-result');
+  if(raw){
+    try{
+      const r = JSON.parse(raw);
+      document.getElementById('quizResult').innerText = `🌈 Hasil terakhir: ${r.score}/${r.total} — ${r.pct}% (${new Date(r.time).toLocaleString()})`;
+    }catch(e){}
+  }
+});
 </script>
 
 </body>
-</html>
+                                                             </html>
