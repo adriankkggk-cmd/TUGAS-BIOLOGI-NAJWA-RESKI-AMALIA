@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biologi - Fotosintesis</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f7f5;
+    }
+    nav {
+        background: #1b5e20;
+        padding: 12px 25px;
+        position: sticky;
+        top: 0;
+        color: white;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+    .hero {
+        background: #1b5e20;
+        color: white;
+        padding: 60px 25px;
+        text-align: center;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    .card {
+        background: white;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 10px;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #1b5e20;
+        margin-top: 0;
+    }
+
+    /* Video */
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+    }
+    .video-container iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    /* Kuis */
+    .quiz-box {
+        background: #e8f5e9;
+        padding: 15px;
+        border-left: 5px solid #1b5e20;
+        border-radius: 8px;
+    }
+    button {
+        padding: 10px 18px;
+        border: none;
+        background: #1b5e20;
+        color: white;
+        border-radius: 6px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #174a18;
+    }
+
+    footer {
+        background: #1b5e20;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
+    }
+</style>
+
+<script>
+    function cekKuis() {
+        let skor = 0;
+        const kunci = {
+            q1: "b",
+            q2: "a",
+            q3: "c"
+        };
+
+        for (let i in kunci) {
+            let jawaban = document.querySelector(`input[name="${i}"]:checked`);
+            if (jawaban && jawaban.value === kunci[i]) {
+                skor++;
+            }
+        }
+
+        document.getElementById("hasilKuis").innerHTML =
+            "Skor kamu: " + skor + " / 3";
+    }
+</script>
+
+</head>
+<body>
+
+<nav>
+    <a href="#tujuan">Tujuan</a>
+    <a href="#materi">Materi</a>
+    <a href="#video">Video</a>
+    <a href="#kuis">Kuis</a>
+</nav>
+
+<section class="hero">
+    <h1>Materi Fotosintesis</h1>
+    <p>Pembelajaran singkat dan jelas tentang proses fotosintesis.</p>
+</section>
+
+<div class="container">
+
+    <div class="card" id="tujuan">
+        <h2>Tujuan Pembelajaran</h2>
+        <ul>
+            <li>Siswa memahami pengertian fotosintesis.</li>
+            <li>Siswa mengetahui tahap-tahap proses fotosintesis.</li>
+            <li>Siswa mampu menjelaskan faktor yang mempengaruhi fotosintesis.</li>
+            <li>Siswa memahami pentingnya fotosintesis bagi kehidupan.</li>
+        </ul>
+    </div>
+
+    <div class="card" id="materi">
+        <h2>Apa Itu Fotosintesis?</h2>
+        <p>
+            Fotosintesis adalah proses tumbuhan hijau, alga, dan beberapa bakteri mengubah energi cahaya
+            menjadi glukosa dan oksigen. Reaksi ini terjadi di kloroplas yang mengandung klorofil.
+        </p>
+
+        <h3>Tahapan Fotosintesis</h3>
+        <ol>
+            <li><b>Reaksi Terang:</b> terjadi di grana dan membutuhkan cahaya.</li>
+            <li><b>Reaksi Gelap (Siklus Calvin):</b> terjadi di stroma tanpa memerlukan cahaya langsung.</li>
+        </ol>
+
+        <h3>Rumus Fotosintesis</h3>
+        <p style="text-align:center; font-size:20px;">
+            <b>6CO₂ + 6H₂O + cahaya → C₆H₁₂O₆ + 6O₂</b>
+        </p>
+    </div>
+
+    <div class="card" id="video">
+        <h2>Video Pembelajaran</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/nlXwuNHF8JM" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card" id="kuis">
+        <h2>Kuis Sederhana</h2>
+
+        <div class="quiz-box">
+            <p><b>1. Bahan utama fotosintesis adalah...</b></p>
+            <label><input type="radio" name="q1" value="a"> Oksigen & Nitrogen</label><br>
+            <label><input type="radio" name="q1" value="b"> Karbon dioksida & Air</label><br>
+            <label><input type="radio" name="q1" value="c"> Protein</label>
+        </div>
+
+        <div class="quiz-box">
+            <p><b>2. Reaksi terang terjadi di...</b></p>
+            <label><input type="radio" name="q2" value="a"> Grana</label><br>
+            <label><input type="radio" name="q2" value="b"> Sitoplasma</label><br>
+            <label><input type="radio" name="q2" value="c"> Inti sel</label>
+        </div>
+
+        <div class="quiz-box">
+            <p><b>3. Hasil fotosintesis adalah...</b></p>
+            <label><input type="radio" name="q3" value="a"> Lemak</label><br>
+            <label><input type="radio" name="q3" value="b"> Mineral</label><br>
+            <label><input type="radio" name="q3" value="c"> Glukosa & Oksigen</label>
+        </div>
+
+        <button onclick="cekKuis()">Cek Jawaban</button>
+        <p id="hasilKuis" style="font-weight:bold; margin-top:10px;"></p>
+    </div>
+</div>
+
+<footer>
+    © 2024 Pembelajaran Fotosintesis | Biologi
+</footer>
+
+</body>
+</html>
